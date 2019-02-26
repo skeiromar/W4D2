@@ -1,0 +1,33 @@
+<div >
+    <h1>One single cat </h1>
+
+    <table border='1'>
+        <thead>
+        <tr>
+            <th colspan ='5'><%= @cat.name.capitalize %>'s Properties</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr >
+                <td style="font-weight: bold">Age</td>
+                <td><%= @cat.age %></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold">Color</td>
+                <td><%= @cat.color%></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold">Sex</td>
+                <td><%= @cat.sex%></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold">Birth Date</td>
+                <td><%= @cat.birth_date %></td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold">Cat Description</td>
+                <td><%= @cat.description %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

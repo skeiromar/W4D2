@@ -1,0 +1,14 @@
+<!--
+<form action = "<%= cat_url(@cat)%>" method = "POST">
+    <input type="hidden" name = "_method" value = "PATCH">
+    <label for = "cat_name">New Cat Name:
+    <input type="text" name = "cat[name]" value = "<%= @cat.name %>" id = "cat_name">
+    </label>
+    <label for = "cat_description"> New Description:
+    <input type="text" name = "cat[description]" value = "<%= @cat.description %>" id = "cat_description">
+    </label>
+
+    <input type="submit" value='Edit Cat'>
+</form>
+-->
+<%= render "form", cat: @cat %>

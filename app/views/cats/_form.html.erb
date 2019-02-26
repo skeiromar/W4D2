@@ -1,0 +1,44 @@
+
+
+<% action = cat.persisted? ? cat_url(cat) : cats_url %>
+<% button_text = cat.persisted? ? "Edit this cat!" : "Create cat"%>
+
+<form action = "<%= action%>" method = "POST">
+    <label for = "cat_name">Cat Name:
+    <input 
+        type="text" 
+        name = "cat[name]" 
+        value = "<%= @cat.name %>" 
+        id = "cat_name">
+    </label>
+    <br>
+    <% if cat.persisted? %>
+        <input type="hidden" name = "_method" value = "PATCH">
+    <% else %>
+        <label for="cat_color">Color of Cat:
+        <select name="cat[color]" id="cat_color">
+            <option value="" selected disabled>--Select Color--</option>
+            <option value="red">red</option>
+            <option value="orange">orange</option>
+            <option value="purple">purple</option>
+            <option value="black">black</option>
+            <option value="yellow">yellow</option>
+        </select>
+    </label>
+    <br>
+    <label for="">Sex:
+        <input type="radio" name="cat[sex]" id="cat_sex" value = "M" checked> M
+        <input type="radio" name="cat[sex]" id="cat_sex" value = "F"> F
+    </label>
+    <br>
+    <label for="">Birth Date:
+        <input type="date" name="cat[birth_date]" id="cat_date">
+    </label>
+    <br>
+    <% end %>
+    <label for = "cat_description">Description:
+    <input type="text" name = "cat[description]" value = "<%= @cat.description %>" id = "cat_description">
+    </label>
+
+    <input type="submit" value=<%= button_text %>>
+</form>
